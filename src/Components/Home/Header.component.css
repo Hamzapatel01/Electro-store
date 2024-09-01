@@ -1,0 +1,133 @@
+.main-header {
+  width: 100%;
+  height: 110px;
+  padding: 0 20px;
+  z-index: 99;
+  color: black;
+  border-bottom: 1px solid black;
+  background-color: rgba(128, 128, 128, 0.05);
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.404);
+  font-weight: bold;
+  transition: all 0.3s ease; /* Added transition for smooth animation */
+}
+
+@media (min-width: 768px) {
+  .main-header {
+    padding: 0 40px;
+  }
+}
+
+.main-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .main-header .header-content {
+    height: 80px;
+  }
+}
+
+.main-header .left {
+  list-style-type: none;
+  display: none;
+  gap: 25px;
+}
+
+@media (min-width: 768px) {
+  .main-header .left {
+    display: flex;
+  }
+}
+
+.main-header .left li {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main-header .left li:hover {
+  opacity: 0.6;
+}
+
+.main-header .center {
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .main-header .center {
+    font-size: 34px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.main-header .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .main-header .right {
+    gap: 25px;
+  }
+}
+
+.main-header .right svg {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .main-header .right svg {
+    font-size: 24px;
+  }
+}
+
+.main-header .right svg:hover {
+  opacity: 0.6;
+}
+
+.main-header .right .cart-icon {
+  position: relative;
+}
+
+.main-header .right .cart-icon span {
+  min-width: 20px;
+  text-align: center;
+  background: #8e2de2;
+  padding: 2.5px;
+  position: absolute;
+  top: -5px;
+  right: -12px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+.main-header.sticky-header {
+  position: sticky;
+  top: 0; /* Ensure it sticks to the top */
+  background-color: var(--light-grey);
+  color: rgba(0, 0, 0, 0.836);
+  z-index: 999;
+  animation: stickyheader 0.3s ease forwards;
+}
+
+@keyframes stickyheader {
+  0% {
+    transform: translateY(-100px); /* Start position */
+  }
+  100% {
+    transform: translateY(0px); /* End position */
+  }
+}
