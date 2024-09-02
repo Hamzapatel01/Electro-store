@@ -10,20 +10,20 @@ const Products = () => {
   const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  let componentsmounted = true;
+  let fectedproducts = true;
 
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products");
-      if (componentsmounted) {
+      if (fectedproducts) {
         const products = await response.json();
         setData(products);
         setFilter(products);
         setLoading(false);
       }
       return () => {
-        componentsmounted = false;
+        fectedproducts = false;
       };
     };
     getProducts();
@@ -56,7 +56,7 @@ const Products = () => {
         <div className="row">
           {filter.map((p) => (
             <div className="col-md-3 pt-4" key={p.id}>
-              <div className="card h-100 text-center p-3" style={{ border: 'none', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.65)' ,cursor:"pointer"}}>
+              <div className="card h-100 text-center p-3" style={{ border: 'none', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.55)' ,cursor:"pointer"}}>
                 <img src={p.image} className="card-img-top" alt={p.title} style={{ objectFit: 'cover', height: '250px' }} />
                 <div className="card-body ">
                   <h5 className="card-title mb-0">{p.title.substring(0, 12)}</h5>
@@ -82,7 +82,7 @@ const Products = () => {
     <div className="container flex-column">
       <div className="row">
         <div className="col-12 mt-2 text-center ">
-          {/* Removed 'text-center' class to avoid flex alignment */}
+          
           <h1>Buy Products</h1>
         </div>
       </div>
